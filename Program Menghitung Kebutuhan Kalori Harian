@@ -1,0 +1,47 @@
+//Tugas Pemrograman TLS
+#include <iostream>
+using namespace std;
+
+int main() {
+	char jk;
+	double berat, tinggi, usia,BMR,KKH;
+	int aktivitas;
+
+	cout << "Program C++ Menghitung Kebutuhan Kalori Harian" << "\n\n\n";
+
+	cout << "Jenis kelamin (L/P):";
+	cin >> jk;
+	cout << "Berat badan (kg):";
+	cin >> berat;
+	cout << "Tinggi badan (cm):";
+	cin >> tinggi;
+	cout << "Usia:";
+	cin >> usia;
+	cout << "1. Aktivitas ringan\n";
+	cout << "2. Aktivitas sedang\n";
+	cout << "3. Aktivitas berat\n";
+	cout << "Pilih aktivitas(1/2/3):";
+	cin >> aktivitas;
+	cout << "\n";
+
+	switch (jk) {
+		case 'L': BMR = (66.5 + (13.75 * berat) + (5.003 * tinggi) - (6.75 * usia)); break;
+		case 'P': BMR = (655.1 + (9.563 * berat) + (1.850 * tinggi) - (4.676 * usia)); break;
+		case 'l': BMR = (66.5 + (13.75 * berat) + (5.003 * tinggi) - (6.75 * usia)); break;
+		case 'p': BMR = (655.1 + (9.563 * berat) + (1.850 * tinggi) - (4.676 * usia)); break;
+		default:cout << "Input data salah"; break;
+	}
+
+	switch (aktivitas) {
+		case 1: KKH=(BMR * 1.2);break;
+		case 2: KKH=(BMR * 1.3);break;
+		case 3: KKH=(BMR * 1.4);break;
+		default:cout << "Input data salah\n\n"; break;
+	}
+
+	cout << "Basal Metabolic Rate (BMR):" << BMR << " kalori"<< endl;
+	cout << "Kebutuhan Kalori Harian:" << KKH << " kalori"<< endl;
+
+
+	return 0;
+}
